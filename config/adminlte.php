@@ -331,6 +331,14 @@ return [
             'can' => 'administrar roles'
         ],
         [
+            'text' => 'Gestion de Centros',
+            'url'=> 'centros',
+            'icon' => 'far fa-fw fa-file',
+            'label' => 4,
+            'label_color' => 'success',
+            'can' => 'crear usuarios'
+        ],
+        [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
