@@ -17,4 +17,9 @@ class Center extends Model
         'address',
         'location'
      ];
+
+     public function resources()
+     {
+         return $this->hasMany(Resource::class);
+     }
 }

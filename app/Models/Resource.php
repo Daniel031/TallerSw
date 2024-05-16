@@ -16,4 +16,9 @@ class Resource extends Model
         'type_resource',
         'center_id'
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class);
+    }
 }

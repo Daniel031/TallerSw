@@ -339,6 +339,11 @@ return [
             'can' => 'crear usuarios'
         ],
         [
+            'text' => 'Centros registrados',
+            'url'=> 'ver-centros',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [

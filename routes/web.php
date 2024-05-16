@@ -55,7 +55,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/store-centro',[CentrosController::class,'store'])->name('store-centro');
 });
 
-
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/ver-centros',[CentrosController::class,'show'])->name('centros.show');
+});
 
 
 

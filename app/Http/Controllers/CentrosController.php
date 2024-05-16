@@ -79,11 +79,11 @@ class CentrosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $centers = Center::all();
+        return view('vista-centros.show', compact('centers'));
     }
-
 
     
 
