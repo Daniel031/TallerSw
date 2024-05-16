@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermisosController;
+use App\Http\Controllers\CentrosController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,6 +42,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/actualizar-role/{id}',[RoleController::class,'update'])->name('actualizar-rol');
     Route::get('/cambiarEstado/{id}',[RoleController::class,'cambiarEstado'])->name('actualizar-estado-rol');
 });
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+    
+    Route::get('/centros',[CentrosController::class,'index'])->name('centros');
+    Route::get('/crear-nuevo-centro',[CentrosController::class,'create'])->name('crear-centro');
+    Route::get('/edit-centro/{id}',[CentrosController::class,'edit'])->name('editar-centro');
+    Route::get('/actualizar-estado-centro/{id}',[CentrosController::class,'cambiarEstado'])->name('cambiarEstadoCentro');
+    Route::post('/update-centro/{id}',[CentrosController::class,'update'])->name('actualizar-centro');
+    Route::post('/store-centro',[CentrosController::class,'store'])->name('store-centro');
+});
+
+
+
 
 
 
