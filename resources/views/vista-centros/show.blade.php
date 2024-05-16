@@ -24,7 +24,7 @@
                                     {{$center->description}}
                                 </p>
                                 <div class="row">
-                                    <a href="#" class="btn btn-sm bg-primary">Ir a la pagina del centro</a>
+                                    <a href="{{route('centros.main', $center->id)}}" class="btn btn-sm bg-primary">Ir a la pagina del centro</a>
                                 </div>
                             </div>
                         </div>

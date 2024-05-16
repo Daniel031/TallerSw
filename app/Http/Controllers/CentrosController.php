@@ -137,4 +137,8 @@ class CentrosController extends Controller
     {
         //
     }
+
+    public function main(Center $center) {
+        return view('vista-centros.main',compact('center'));
+    }
 }

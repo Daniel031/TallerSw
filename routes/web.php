@@ -59,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ver-centros',[CentrosController::class,'show'])->name('centros.show');
 });
 
+  Route::get('/vista-centro/{center}',[CentrosController::class,'main'])->name('centros.main');
 
 
 
