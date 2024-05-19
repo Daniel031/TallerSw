@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\CentrosController;
-
+use App\Http\Controllers\SucursalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
     
     Route::get('/centros',[CentrosController::class,'index'])->name('centros');
-    Route::get('/crear-nuevo-centro',[CentrosController::class,'create'])->name('crear-centro');
+    Route::get('/crear-centro',[CentrosController::class,'create'])->name('crear-centro');
     Route::get('/edit-centro/{id}',[CentrosController::class,'edit'])->name('editar-centro');
     Route::get('/actualizar-estado-centro/{id}',[CentrosController::class,'cambiarEstado'])->name('cambiarEstadoCentro');
     Route::post('/update-centro/{id}',[CentrosController::class,'update'])->name('actualizar-centro');
@@ -60,6 +60,21 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
   Route::get('/vista-centro/{center}',[CentrosController::class,'main'])->name('centros.main');
+
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+    
+    Route::get('/sucursales',[SucursalController::class,'index'])->name('sucursales');
+    Route::get('/crear-sucursal',[SucursalController::class,'create'])->name('crear-sucursal');
+    Route::get('/edit-sucursal/{id}',[SucursalController::class,'edit'])->name('edit-sucursal');
+    Route::get('/actualizar-estado-sucursal/{id}',[SucursalController::class,'cambiarEstado'])->name('cambiarEstadoSucursal');
+    Route::post('/update-sucursal/{id}',[SucursalController::class,'update'])->name('update-sucursal');
+    Route::post('/store-sucursal',[SucursalController::class,'store'])->name('store-sucursal');
+});
+
+
 
 
 
