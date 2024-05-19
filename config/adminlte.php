@@ -339,12 +339,11 @@ return [
             'can' => 'crear usuarios'
         ],
         [
-<<<<<<< Updated upstream
             'text' => 'Centros registrados',
             'url'=> 'ver-centros',
             'icon' => 'far fa-fw fa-file',
         ],
-=======
+        [
             'text' => 'Gestionar Sucursales',
             'url'=> 'sucursales',
             'icon' => 'far fa-fw fa-file',
@@ -352,8 +351,6 @@ return [
             'label_color' => 'success',
             'can' => 'crear usuarios'
         ],
-
->>>>>>> Stashed changes
         [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
