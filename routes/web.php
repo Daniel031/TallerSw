@@ -125,6 +125,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/update-donacion/{id}',[DonationController::class,'update'])->name('update-donacion');
     Route::post('/store-donacion',[DonationController::class,'store'])->name('store-donacion');
     Route::get('/show-donacion/{id}',[DonationController::class,'show'])->name('show-donacion');
+    Route::get('/detalles-donaciones/{id}',[DonationController::class, 'detalles'])->name('detalles-donaciones');
 
 });
 

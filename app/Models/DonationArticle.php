@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Donation;
+use App\Models\Article;
 
 class DonationArticle extends Model
 {
@@ -17,4 +19,15 @@ class DonationArticle extends Model
         'article_id',
         'amount'
     ];
+
+
+    public function donation()
+    {
+        return $this->belongsTo(Donation::class);
+    }
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
 }

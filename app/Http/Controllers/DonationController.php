@@ -102,4 +102,29 @@ class DonationController extends Controller
     {
         //
     }
+
+
+    public function detalles(string $id){
+       $donaciones = Donation::where('publication_id',$id)->get();
+        $nombres =[];
+        $cantidades = [];
+        //$donation = Donation::find($id);
+        foreach($donaciones as $donacion){
+            $donacion->detalles = $donacion->donationArticles;
+                foreach($donacion->detalles as $detalle){
+                        if($detalle->article_id){
+                           array_push($nombres,$detalle->article->name);
+                           array_push($cantidades,$detalle->amount);
+                        }
+                }
+        }
+        //dd($nombres);
+        
+        return view('donaciones.detalles',compact('donaciones','nombres','cantidades'));
+        
+       // dd($donation->donationArticles);
+        //$donationArticles = $donation->donationArticles;
+        //dd($donationArticles);
+
+    }
 }

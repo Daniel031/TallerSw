@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\DonationArticle;
 
 class Donation extends Model
 {
@@ -20,4 +21,9 @@ class Donation extends Model
         'sucursal_id',
 
     ];
+
+    public function donationArticles()
+    {
+        return $this->hasMany(DonationArticle::class);
+    }
 }
