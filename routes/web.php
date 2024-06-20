@@ -12,6 +12,7 @@ use App\Http\Controllers\DonorController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\SucursalController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SeriesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -65,8 +66,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ver-centros',[CentrosController::class,'show'])->name('centros.show');
 });
 
-  Route::get('/vista-centro/{center}',[CentrosController::class,'main'])->name('centros.main');
-
+Route::get('/vista-centro/{center}',[CentrosController::class,'main'])->name('centros.main');
+Route::get('/vista-publicaciones',[DonationController::class,'publicView'])->name('publica.index');
 
 
 
@@ -78,6 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/actualizar-estado-sucursal/{id}',[SucursalController::class,'cambiarEstado'])->name('cambiarEstadoSucursal');
     Route::post('/update-sucursal/{id}',[SucursalController::class,'update'])->name('update-sucursal');
     Route::post('/store-sucursal',[SucursalController::class,'store'])->name('store-sucursal');
+    Route::get('/informe-donaciones', [SeriesController::class, 'index'])->name('informes');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -113,6 +115,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/store-publicacion',[PublicationController::class,'store'])->name('store-publicacion');
     Route::get('/show-publicacion/{id}',[PublicationController::class,'show'])->name('show-publicacion');
 });
+
+Route::get('mostrar-publicacion/{id}', [PublicationController::class, 'verPublicacion'])->name('mostrar.publicacion');
 
 
 Route::group(['middleware' => 'auth'], function () {
