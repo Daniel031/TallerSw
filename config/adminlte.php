@@ -319,7 +319,6 @@ return [
             'text' => 'Gestion Usuarios',
             'url'=> 'usuarios',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
             'can' => 'crear usuarios'
         ],
@@ -334,7 +333,6 @@ return [
             'text' => 'Gestion de Centros',
             'url'=> 'centros',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
             'can' => 'crear usuarios'
         ],
@@ -347,47 +345,40 @@ return [
             'text' => 'Gestionar Sucursales',
             'url'=> 'sucursales',
             'icon' => 'far fa-fw fa-file',
-            'label' => 4,
             'label_color' => 'success',
             'can' => 'crear usuarios'
         ],
         [
-            'text' => 'multilevel',
+            'text' => 'Gestion-Articulos',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
+                    'text' => 'Articulos',
+                    'url' => 'articulos',
+                    'icon' => 'fas fa-fw fa-cubes'
                 ],
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
+                    'text' => 'Categorias',
+                    'url' => 'categorias',
+                    'icon' => 'fas fa-fw fa-box'
                 ],
             ],
+        ],
+        [
+            'text' => 'Mis Publicaciones',
+            'url'=> 'publicaciones',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
+            'text' => 'Donantes',
+            'url'=> 'donantes',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
+            'text' => 'Donaciones',
+            'url'=> 'donaciones',
+            'icon' => 'far fa-fw fa-file',
+            'label_color' => 'success',
         ],
         ['header' => 'labels'],
         [
