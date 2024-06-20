@@ -28,7 +28,8 @@
                         <span class="badge {{ $isExpired ? 'bg-danger' : 'bg-success' }}">
                             {{ $donationDate->format('Y-m-d') }}
                         </span>
-                        <a href="{{ route('crear-donacion',$publicacion->id) }}" class="btn btn-warning mt-3">Donar</a>
+                        <a href="{{ route('crear-donacion',$publicacion['id']) }}" class="btn btn-warning mt-3">Donar</a>
+                        <a href="{{ route('detalles-donaciones',$publicacion['id']) }}" class="btn btn-primary mt-3">Detalles</a>
                     </div>
                 </div>
             </div>
