@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
        
 
         $this->call(PermisosSeeder::class);
-
-        
+        $this->call(CategorySeeder::class);
+        $this->call(CentroSeeder::class);
+        $this->call(ArticulosSeeder::class);
+        $this->call(RosourceSeeder::class);
 
       
         
