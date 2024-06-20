@@ -350,6 +350,18 @@ return [
         ],
         [
             'text' => 'Gestion-Articulos',
+            'url'=> 'articulos',
+            'icon' => 'far fa-fw fa-file',
+            'can' => 'crear usuarios'
+        ],
+        [
+            'text' => 'Informe de donaciones',
+            'url'=> 'informe-donaciones',
+            'icon' => 'far fa-fw fa-file',
+            'can' => 'crear usuarios'
+        ],
+        [
+            'text' => 'Articulos',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [

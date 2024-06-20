@@ -136,4 +136,31 @@ class PublicationController extends Controller
             }
         return redirect()->route('publicaciones')->with('success','Actualizado con Exito');
     }
+
+    public function verPublicacion(string $id)
+    {
+    
+        $publicacion = Publication::find($id);
+        $articulos = PublicationArticle::where('publication_id', $publicacion->id)->get();
+        $ListaArticulos = Article::get();
+
+        foreach ($articulos as $articulo) {
+            foreach ($ListaArticulos as $listaArticulo) {
+                if ($listaArticulo->id == $articulo->id) {
+                    $articulo->nombre = $listaArticulo->name;
+                    $imagen = Image::where('article_id', $articulo->id)->first();
+
+                    if ($imagen) {
+                        $articulo->imagen = $imagen->url;
+                    } else {
+                        $articulo->imagen = null;
+
+                    }
+                }
+            }
+        }
+
+            //dd($articulos);
+        return view('general-publicacion-detalle',compact('publicacion','articulos'));
+    }
 }

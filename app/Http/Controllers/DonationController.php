@@ -125,6 +125,11 @@ class DonationController extends Controller
        // dd($donation->donationArticles);
         //$donationArticles = $donation->donationArticles;
         //dd($donationArticles);
-
+    }
+    
+    public function publicView()
+    {
+        $publicaciones = Publication::get();
+        return view('general-publicaciones',compact('publicaciones'));
     }
 }
