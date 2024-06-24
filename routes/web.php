@@ -13,6 +13,7 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\SucursalController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SeriesController;
+use App\Mail\SendRecomendation;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,7 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/actualizarUsuario/{id}',[UserController::class,'cambiarEstado'])->name('actualizar');
     Route::post('/storeUser',[UserController::class,'store'])->name('almacenar');
     Route::put('/actualizar/{id}',[UserController::class,'update'])->name('updat');
-
+    Route::post('/change-rol/{user}',[UserController::class, 'changeRol'])->name('change.rol');
 
 
     
@@ -150,7 +151,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-
+Route::get('send', [SeriesController::class, 'recomendaciones'])->name('send-recomendaciones');
 
 
 

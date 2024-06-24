@@ -91,4 +91,11 @@ class UserController extends Controller
     {
         //
     }
+
+    public function changeRol(User $user, Request $request) {
+        $rol = $request->input('rol');
+        $roles = ["$rol"]; 
+        $user->syncRoles($rol);
+        return redirect()->route('usuarios');     
+    }
 }

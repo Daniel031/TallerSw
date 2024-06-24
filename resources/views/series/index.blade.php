@@ -13,7 +13,7 @@
 <h1>Gráfica de Donaciones Mensuales Ultimo año</h1>
 <canvas id="donacionesMesChart" width="1000" height="400"></canvas>
 
-<h1>Gráfica de Donaciones sobre modelo de prediccion semetral</h1>
+<h1>Gráfica de Donaciones sobre modelo de prediccion</h1>
 <canvas id="donacionesPrediccion" width="1000" height="400"></canvas>
 
 <div style="height: 50px;">
@@ -31,25 +31,49 @@
 <script>
     // Función para obtener datos de la API
     async function fetchDonaciones() {
-        const response = await fetch('{{ env('BUSSINESS_INTELLIGENCE')}}/api/donaciones');
+        const headers = {
+         'ngrok-skip-browser-warning': 'any',  // Header personalizado ngrok
+         'Access-Control-Allow-Origin':'*'
+        };
+        const response = await fetch('{{ env('BUSSINESS_INTELLIGENCE')}}/api/donaciones', {
+            headers: headers
+        });
         const data = await response.json();
         return data;
     }
 
     async function fetchAnios() {
-        const response = await fetch('{{ env('BUSSINESS_INTELLIGENCE')}}/api/anos_disponibles');
+        const headers = {
+         'ngrok-skip-browser-warning': 'any',  // Header personalizado ngrok
+         'Access-Control-Allow-Origin':'*'
+        };
+        const response = await fetch('{{ env('BUSSINESS_INTELLIGENCE')}}/api/anos_disponibles', {
+            headers: headers
+        });
         const data = await response.json();
         return data;
     }
 
     async function fetchDonacionesAnio(anio) {
-        const response = await fetch(`{{ env('BUSSINESS_INTELLIGENCE')}}/api/donaciones/${anio}`)
+        const headers = {
+         'ngrok-skip-browser-warning': 'any',  // Header personalizado ngrok
+         'Access-Control-Allow-Origin':'*'
+        };
+        const response = await fetch(`{{ env('BUSSINESS_INTELLIGENCE')}}/api/donaciones/${anio}`, {
+            headers: headers
+        })
         const data = await response.json();
         return data;
     }
 
     async function fetchDonacionesAnioPrediccion(anio) {
-        const response = await fetch(`{{ env('BUSSINESS_INTELLIGENCE')}}/api/prediccion/${anio}`)
+        const headers = {
+         'ngrok-skip-browser-warning': 'any',  // Header personalizado ngrok
+         'Access-Control-Allow-Origin':'*'
+        };
+        const response = await fetch(`{{ env('BUSSINESS_INTELLIGENCE')}}/api/prediccion-a/${anio}`, {
+            headers: headers
+        })
         const data = await response.json();
         return data;
     }

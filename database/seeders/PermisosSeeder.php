@@ -15,22 +15,28 @@ class PermisosSeeder extends Seeder
     public function run(): void
     {
 
-        $permiso1 = Permission::create(['name' => 'crear usuarios']);
+        $permiso1 = Permission::create(['name' => 'administrar usuarios']);
         $admin1 = Role::create(['name'=>'superAdmin']);
         $admin1->givePermissionTo($permiso1);
 
-        $permiso2 = Permission::create(['name' => 'administrar roles']);
+        $permiso2 = Permission::create(['name' => 'administrar centro']);
         $admin2= Role::create(['name'=>'administrador']);
         $admin2->givePermissionTo($permiso2);
-        $admin1->givePermissionTo($permiso2);
+
         $usuario = User::create([
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password'=>bcrypt('password'),
         ]);
 
-        $usuario->assignRole($admin1);
+        $usuario1 = User::create([
+            'name' => 'Dilker',
+            'email' => 'dilker@example.com',
+            'password'=>bcrypt('password'),
+        ]);
 
+        $usuario->assignRole($admin2);
+        $usuario1->assignRole($admin1);
         
        
        

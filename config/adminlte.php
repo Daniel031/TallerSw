@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>AllForYou</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/AllForYouLogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/AllForYouLogo.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -113,7 +113,7 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/AllForYou.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -320,45 +320,46 @@ return [
             'url'=> 'usuarios',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
-            'can' => 'crear usuarios'
+            'can' => 'administrar usuarios'
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'Roles',
             'url' => 'roles',
             'icon' => 'fas fa-fw fa-user',
-            'can' => 'administrar roles'
+            'can' => 'administrar usuarios'
         ],
         [
             'text' => 'Gestion de Centros',
             'url'=> 'centros',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
-            'can' => 'crear usuarios'
+            'can' => 'administrar usuarios'
         ],
         [
             'text' => 'Centros registrados',
             'url'=> 'ver-centros',
             'icon' => 'far fa-fw fa-file',
+            'can' => 'administrar usuarios'
         ],
         [
             'text' => 'Gestionar Sucursales',
             'url'=> 'sucursales',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
-            'can' => 'crear usuarios'
+            'can' => 'administrar centro'
         ],
         [
             'text' => 'Gestion-Articulos',
             'url'=> 'articulos',
             'icon' => 'far fa-fw fa-file',
-            'can' => 'crear usuarios'
+            'can' => 'administrar centro'
         ],
         [
             'text' => 'Informe de donaciones',
             'url'=> 'informe-donaciones',
             'icon' => 'far fa-fw fa-file',
-            'can' => 'crear usuarios'
+            'can' => 'administrar centro'
         ],
         [
             'text' => 'Articulos',
@@ -375,38 +376,26 @@ return [
                     'icon' => 'fas fa-fw fa-box'
                 ],
             ],
+            'can' => 'administrar centro'
         ],
         [
             'text' => 'Mis Publicaciones',
             'url'=> 'publicaciones',
             'icon' => 'far fa-fw fa-file',
+            'can' => 'administrar centro'
         ],
         [
             'text' => 'Donantes',
             'url'=> 'donantes',
             'icon' => 'far fa-fw fa-file',
+            'can' => 'administrar centro'
         ],
         [
             'text' => 'Donaciones',
             'url'=> 'donaciones',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
-        ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'can' => 'administrar centro'
         ],
     ],
 
